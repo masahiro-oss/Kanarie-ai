@@ -19,46 +19,66 @@
       color: var(--text);
       line-height: 1.7;
     }
+
+    /* Header / Nav */
     header {
       position: sticky;
       top: 0;
       z-index: 10;
       backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.94);
-      border-bottom: 1px solid rgba(148,163,184,0.3);
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid rgba(148,163,184,0.35);
     }
     .nav-inner {
-      max-width: 960px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 12px 16px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 16px;
     }
-    .logo { font-weight: 700; letter-spacing: .06em; color: var(--blue-dark); }
-    .nav-links { display: flex; gap: 16px; font-size: 14px; }
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e3a8a;
+      letter-spacing: .06em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
     .nav-links a {
       text-decoration: none;
       color: #475569;
+      font-weight: 500;
     }
-    .nav-links a:hover { color: var(--blue); }
+    .nav-links a:hover {
+      color: var(--blue);
+    }
     .nav-cta {
-      padding: 8px 14px;
+      padding: 8px 16px;
       border-radius: 999px;
       background: var(--blue);
       color: #fff;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      box-shadow: 0 10px 24px rgba(37,99,235,0.3);
+      box-shadow: 0 10px 24px rgba(37,99,235,0.35);
     }
     .nav-cta:hover { background: var(--blue-dark); }
 
     main {
-      max-width: 960px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 32px 16px 64px;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
     .hero-badge {
       display: inline-flex;
@@ -67,32 +87,48 @@
       font-size: 12px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(37,99,235,0.08);
-      color: var(--blue-dark);
-      margin-bottom: 12px;
+      background: rgba(37,99,235,0.12);
+      color: #1d4ed8;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #2563eb;
     }
     .hero-title {
-      font-size: clamp(26px, 4.2vw, 36px);
+      font-size: clamp(30px, 5vw, 40px);
       font-weight: 800;
-      margin: 0 0 12px;
+      color: #0f172a;
+      margin: 0 0 16px;
+      line-height: 1.2;
     }
-    .hero-title span { color: var(--blue); }
+    .hero-title span {
+      color: var(--blue);
+    }
     .hero-sub {
       color: #475569;
-      max-width: 520px;
-      font-size: 14px;
+      max-width: 640px;
+      font-size: 15px;
+      margin: 0;
+    }
+    .hero-sub strong {
+      color: #0f172a;
     }
     .hero-actions {
-      margin-top: 20px;
+      margin-top: 24px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      justify-content: flex-start;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 18px;
+      padding: 11px 20px;
       border-radius: 999px;
       border: none;
       cursor: pointer;
@@ -104,7 +140,7 @@
     .btn-primary {
       background: var(--blue);
       color: #fff;
-      box-shadow: 0 14px 30px rgba(37,99,235,0.35);
+      box-shadow: 0 18px 30px rgba(37,99,235,0.4);
     }
     .btn-primary:hover { background: var(--blue-dark); }
     .btn-outline {
@@ -112,61 +148,312 @@
       border: 1px solid #e2e8f0;
       color: #475569;
     }
+    .btn-outline:hover { background: #f8fafc; }
+
     section {
-      margin-top: 40px;
+      margin-top: 48px;
     }
     h2 {
-      font-size: 20px;
+      font-size: 24px;
       margin-bottom: 8px;
+      color: #0f172a;
     }
     .section-sub {
       font-size: 14px;
       color: #64748b;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
     }
     .card {
       background: #fff;
-      border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 10px 26px rgba(15,23,42,0.06);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(15,23,42,0.08);
+      border: 1px solid #e2e8f0;
       font-size: 14px;
     }
     .card h3 {
       margin: 0 0 8px;
       font-size: 16px;
+      color: #0f172a;
     }
-    .card p { margin: 0; color: #475569; }
+    .card p {
+      margin: 0;
+      color: #475569;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #475569;
+    }
+    .card li { margin-bottom: 4px; }
 
-    .contact {
-      margin-top: 40px;
-      padding: 20px 18px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #1d4ed8, #0f766e);
-      color: #e0f2fe;
-      box-shadow: 0 18px 40px rgba(15,23,42,0.6);
+    /* Solution layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
     }
-    .contact h2 { margin: 0 0 8px; color: #e5f0ff; }
-    .contact p { margin: 0 0 14px; font-size: 14px; }
-    .contact-actions {
+    .pill {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(59,130,246,0.4);
+      background: rgba(59,130,246,0.18);
+      color: #bfdbfe;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .solution-bg {
+      background: radial-gradient(circle at top left, #1e3a8a 0, #020617 55%);
+      color: #e5e7eb;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 24px 50px rgba(15,23,42,0.9);
+    }
+    .solution-bg h2 {
+      color: #e5e7eb;
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+    .solution-bg p {
+      margin: 0 0 20px;
+      color: #cbd5f5;
+      font-size: 14px;
+    }
+    .solution-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .solution-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #e5efff;
+    }
+    .solution-bullet {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 2px solid #60a5fa;
+      margin-top: 3px;
+    }
+
+    .platform-card {
+      background: rgba(15,23,42,0.8);
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid #1e293b;
+      font-size: 13px;
+    }
+    .platform-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .yt-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #ef4444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .platform-block {
+      background: rgba(15,23,42,0.9);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-top: 8px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: #e5e7eb;
+    }
+    .platform-block-title {
+      color: #bfdbfe;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .platform-block-text {
+      font-size: 12px;
+      color: #cbd5f5;
+    }
+
+    /* Comparison table */
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table {
+      border-collapse: collapse;
+      min-width: 100%;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: left;
+    }
+    thead {
+      background: #f8fafc;
+    }
+    th {
+      font-size: 12px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .row-highlight {
+      background: #eff6ff;
+    }
+    .badge-stock {
+      display: inline-flex;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    /* Tech / steps */
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .step h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      color: #0f172a;
+    }
+    .step p {
+      margin: 0;
+      font-size: 14px;
+      color: #475569;
+    }
+
+    .mock-card {
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 12px 28px rgba(15,23,42,0.12);
+    }
+    .mock-panel {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 10px;
+      font-size: 11px;
+      color: #475569;
+    }
+    .mock-bar {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      overflow: hidden;
+      margin: 6px 0;
+    }
+    .mock-bar-fill-a {
+      width: 85%;
+      height: 100%;
+      background: #3b82f6;
+      border-radius: 999px;
+    }
+    .mock-bar-fill-b {
+      width: 45%;
+      height: 100%;
+      background: #cbd5f5;
+      border-radius: 999px;
+    }
+
+    /* Contact section */
+    .contact {
+      margin-top: 48px;
+      padding: 24px 20px;
+      border-radius: 22px;
+      background: linear-gradient(135deg,#1d4ed8,#0f766e);
+      color: #e0f2fe;
+      box-shadow: 0 24px 50px rgba(15,23,42,0.9);
+      text-align: center;
+    }
+    .contact h2 {
+      margin: 0 0 12px;
+      color: #e5f0ff;
+      font-size: 24px;
+    }
+    .contact p {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: #dbeafe;
+    }
+    .contact-inner {
+      margin-top: 16px;
+      background: rgba(15,23,42,0.35);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(191,219,254,0.4);
+    }
+    .contact-info {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      justify-content: center;
+      gap: 12px 24px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      color: #e0f2fe;
+    }
+    .contact-main-btn {
+      display: inline-block;
       margin-top: 8px;
+      padding: 11px 22px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #1d4ed8;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.9);
     }
-    .contact .btn-primary {
-      background: #fff;
-      color: var(--blue-dark);
-      box-shadow: 0 10px 28px rgba(15,23,42,0.4);
+    .contact-main-btn:hover {
+      background: #eff6ff;
     }
-    .contact .btn-outline {
-      border-color: rgba(226,232,240,0.9);
-      color: #e5f0ff;
-      background: transparent;
+    .contact-note {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #bfdbfe;
     }
 
     footer {
@@ -176,15 +463,18 @@
       padding: 24px 0 12px;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
+      .two-col { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .nav-inner { justify-content: space-between; }
+      .hero { text-align: left; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="nav-inner">
-      <div class="logo">KANARIE AI</div>
+      <div class="logo">Kanarie AI</div>
       <nav class="nav-links">
         <a href="#problems">課題</a>
         <a href="#solution">解決策</a>
@@ -196,17 +486,19 @@
 
   <main>
     <!-- Hero -->
-    <section>
+    <section class="hero">
       <div class="hero-badge">
-        <span style="width:8px;height:8px;border-radius:999px;background:#2563eb;display:inline-block;"></span>
+        <span class="hero-dot"></span>
         次世代の広告戦略
       </div>
       <h1 class="hero-title">
-        「ただの広告」から <span>「資産」</span> へ。
+        「ただの広告」から<br />
+        <span>「資産」</span>へ。
       </h1>
       <p class="hero-sub">
-        Meta・TikTok・Google検索広告の限界を超える。Kanarie AIは、YouTubeショートを活用した
-        <strong>ストック型マーケティング</strong> を実現します。
+        Meta・TikTok・Google検索広告の限界を超える。<br />
+        Kanarie AIは、YouTubeショートを活用した
+        <strong>「ストック型マーケティング」</strong>を実現します。
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">デモを依頼する</a>
@@ -221,78 +513,224 @@
       <div class="grid">
         <div class="card">
           <h3>広告停止 ＝ 収益ゼロ</h3>
-          <p>Metaや検索広告は、予算を止めた瞬間に流入が完全にストップします。資産として残りません。</p>
+          <p>MetaやGoogle検索広告は、予算を止めた瞬間に流入が完全に停止します。資産として残りません。</p>
         </div>
         <div class="card">
           <h3>CPAの高騰</h3>
-          <p>競合の増加により獲得単価は年々上昇。同じ予算での獲得効率は下がる一方です。</p>
+          <p>競合の激化により、獲得単価は年々上昇傾向。同じ予算での獲得効率は下がる一方です。</p>
         </div>
         <div class="card">
-          <h3>資産にならない広告</h3>
-          <p>いくら広告費をかけても、自社チャンネルや登録者という形で残りづらい構造です。</p>
+          <h3>資産にならない</h3>
+          <p>どれだけ費用をかけても、自社メディアのパワー（チャンネル登録者等）は蓄積されにくい構造です。</p>
         </div>
       </div>
     </section>
 
     <!-- Solution -->
     <section id="solution">
-      <h2>Kanarie AIのソリューション</h2>
-      <p class="section-sub">YouTubeショート × AI最適化 で「ストック型」集客をつくる。</p>
-      <div class="grid">
-        <div class="card">
-          <h3>① 事業理解 & 設計</h3>
-          <p>あなたの事業モデル・理想顧客・既存の導線をヒアリングし、「勝てる構図」を整理します。</p>
+      <div class="two-col">
+        <div class="solution-bg">
+          <span class="pill">Kanarie AIのソリューション</span>
+          <h2>「広告媒体としての強さ」×「チャンネル資産化」</h2>
+          <p>
+            KanarieのAIショート広告は、単なるLPへの誘導装置ではありません。<br />
+            動画自体がチャンネルに残り、継続的な再生を生み出す
+            「ストック型マーケティング」を実現します。
+          </p>
+          <ul class="solution-list">
+            <li>
+              <span class="solution-bullet"></span>
+              <span>広告配信終了後もオーガニック再生が続く</span>
+            </li>
+            <li>
+              <span class="solution-bullet"></span>
+              <span>質の高い視聴者が「チャンネル登録者」として蓄積</span>
+            </li>
+            <li>
+              <span class="solution-bullet"></span>
+              <span>将来的な集客コスト(CPA)を劇的に引き下げる</span>
+            </li>
+          </ul>
         </div>
-        <div class="card">
-          <h3>② ショート動画クリエイティブ</h3>
-          <p>AIを用いて大量のパターンを生成・検証し、視聴維持率とCVRの高い構成だけを残していきます。</p>
-        </div>
-        <div class="card">
-          <h3>③ 自動最適化</h3>
-          <p>成果の低い動画は停止し、良い動画へ予算を自動で集中。運用工数をほぼゼロにします。</p>
+
+        <div>
+          <div class="platform-card">
+            <div class="platform-header">
+              <div class="yt-icon">▶</div>
+              <div>
+                <div style="font-size:12px;color:#9ca3af;">Target Platform</div>
+                <div style="font-size:16px;font-weight:700;">YouTube Shorts</div>
+              </div>
+            </div>
+            <div class="platform-block">
+              <div class="platform-block-title">Google AI ターゲティング</div>
+              <div class="platform-block-text">
+                検索・視聴履歴に基づいた、購買意欲の高いユーザー層へのリーチ。
+              </div>
+            </div>
+            <div class="platform-block">
+              <div class="platform-block-title">圧倒的低コスト</div>
+              <div class="platform-block-text">
+                1再生 0.2円〜5円。Meta等と比較して安価なCPM。
+              </div>
+            </div>
+            <div class="platform-block">
+              <div class="platform-block-title">高い拡散力（バイラリティ）</div>
+              <div class="platform-block-text">
+                AIレコメンド最適化で、長期間かつ広範囲へ拡散。
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Comparison -->
     <section id="comparison">
-      <h2>他媒体との比較</h2>
-      <p class="section-sub">なぜ今、Kanarie AI が選ばれるのか。</p>
-      <div class="grid">
-        <div class="card">
-          <h3>YouTubeショート (Kanarie)</h3>
-          <p>動画がチャンネルに残り続け、広告停止後もオーガニック再生と登録者が増え続ける「資産型」。</p>
+      <h2>他媒体との徹底比較</h2>
+      <p class="section-sub">なぜ今、Kanarie AIが選ばれるのか</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>媒体</th>
+              <th>資産性(ストック)</th>
+              <th>ターゲティング精度</th>
+              <th>持続的効果</th>
+              <th>コスト感</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-highlight">
+              <td>
+                <strong style="color:#1d4ed8;">YouTubeショート (Kanarie)</strong>
+              </td>
+              <td>
+                <span class="badge-stock">◎ 極めて高い</span>
+              </td>
+              <td>Google AI活用 (広範囲)</td>
+              <td><strong>◎ 半永久的</strong></td>
+              <td><strong style="color:#16a34a;">0.2円〜</strong> / 再生</td>
+            </tr>
+            <tr>
+              <td><strong>Meta (FB/Insta)</strong></td>
+              <td>× なし (フロー型)</td>
+              <td>興味関心・属性</td>
+              <td>× 停止でゼロ</td>
+              <td>中〜高</td>
+            </tr>
+            <tr>
+              <td><strong>TikTok広告</strong></td>
+              <td>× なし (フロー型)</td>
+              <td>若年層中心</td>
+              <td>× 停止でゼロ</td>
+              <td>中</td>
+            </tr>
+            <tr>
+              <td><strong>Googleリスティング</strong></td>
+              <td>× なし</td>
+              <td>キーワード (顕在層)</td>
+              <td>× 停止でゼロ</td>
+              <td>高 (50円〜/click)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Tech / Engine -->
+    <section>
+      <div class="two-col">
+        <div class="mock-card">
+          <div class="mock-panel">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span style="width:8px;height:8px;border-radius:999px;background:#22c55e;"></span>
+                <span style="font-size:11px;font-weight:700;color:#475569;">AI OPTIMIZATION ACTIVE</span>
+              </div>
+              <span style="font-size:11px;color:#9ca3af;">Live</span>
+            </div>
+            <div class="mock-bar">
+              <div class="mock-bar-fill-a"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;">
+              <span>Creative Pattern A</span>
+              <span style="font-weight:600;color:#0f172a;">85% Retention</span>
+            </div>
+            <div class="mock-bar">
+              <div class="mock-bar-fill-b"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;">
+              <span>Creative Pattern B (Stopped)</span>
+              <span style="font-weight:600;color:#0f172a;">45% Retention</span>
+            </div>
+          </div>
+
+          <div class="mock-panel">
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+              <div>
+                <div style="font-size:11px;color:#94a3b8;margin-bottom:2px;">Total Subscribers</div>
+                <div style="font-size:20px;font-weight:700;color:#0f172a;">+12,450</div>
+              </div>
+              <div style="font-size:12px;font-weight:700;color:#16a34a;">+124%</div>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h3>Meta / TikTok広告</h3>
-          <p>配信を止めた瞬間に流入ゼロ。短期的なブーストは可能だが、資産性は低い。</p>
-        </div>
-        <div class="card">
-          <h3>検索広告</h3>
-          <p>顕在層には強いがクリック単価が高く、スケールに限界。競争も激化しやすい領域。</p>
+
+        <div>
+          <h2>成果を最大化する <span style="color:#2563eb;">Kanarie AI エンジン</span></h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div>
+                <h3>分析 &amp; 生成</h3>
+                <p>過去の膨大なヒット動画データをAIが学習。視聴維持率を最大化する構成とスクリプトを自動生成します。</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div>
+                <h3>高速ABテスト</h3>
+                <p>大量のバリエーションを同時に出稿。人間の手では不可能な速度で「勝ちクリエイティブ」を特定します。</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div>
+                <h3>自動最適化</h3>
+                <p>成果の出ない動画を停止し、予算を成果の良い動画へ自動配分。CPAを最小化し続けます。</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="contact">
-      <h2>まずは、あなたの事業でのポテンシャルを診断します</h2>
+      <h2>資産を築く広告運用を始めませんか？</h2>
       <p>
-        いきなり大きな広告費のご提案ではなく、<br />
-        「Kanarie AI を使うと、どのくらいのスケールとROIが見込めるか」を一緒にシミュレーションします。
+        まずはお気軽にお問い合わせください。<br />
+        貴社の課題に合わせたシミュレーションをご提案します。
       </p>
-      <div class="contact-actions">
-        <a href="mailto:masahiro@capital-design-holdings.com?subject=Kanarie AIについて"
-           class="btn btn-primary">メールで相談する</a>
-        <a href="https://www.capital-design-holdings.com" target="_blank" class="btn btn-outline">
-          公式サイトを見る
+      <div class="contact-inner">
+        <div class="contact-info">
+          <span>📧 masahiro@capital-design-holdings.com</span>
+          <span>🌐 www.capital-design-holdings.com</span>
+        </div>
+        <a
+          class="contact-main-btn"
+          href="mailto:masahiro@capital-design-holdings.com?subject=Kanarie AIについてのお問い合わせ"
+        >
+          お問い合わせ・デモのご依頼
         </a>
+        <div class="contact-note">CAPITAL DESIGN Holdings</div>
       </div>
     </section>
   </main>
 
   <footer>
-    © Kanarie AI / Capital Design Holdings
+    © Kanarie AI / CAPITAL DESIGN. All rights reserved.
   </footer>
 </body>
 </html>
