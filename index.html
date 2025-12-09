@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>Kanarie AI - 自動で売上を伸ばすYouTube広告</title>
+  <title>Kanarie AI - ストック型YouTubeショート広告</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -22,9 +22,9 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 10;
       backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.94);
       border-bottom: 1px solid rgba(148,163,184,0.3);
     }
     .nav-inner {
@@ -32,27 +32,17 @@
       margin: 0 auto;
       padding: 12px 16px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 16px;
     }
-    .logo {
-      font-weight: 700;
-      letter-spacing: .05em;
-      color: var(--blue-dark);
-    }
-    .nav-links {
-      display: flex;
-      gap: 16px;
-      font-size: 14px;
-    }
+    .logo { font-weight: 700; letter-spacing: .06em; color: var(--blue-dark); }
+    .nav-links { display: flex; gap: 16px; font-size: 14px; }
     .nav-links a {
       text-decoration: none;
       color: #475569;
     }
-    .nav-links a:hover {
-      color: var(--blue);
-    }
+    .nav-links a:hover { color: var(--blue); }
     .nav-cta {
       padding: 8px 14px;
       border-radius: 999px;
@@ -61,19 +51,16 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+      box-shadow: 0 10px 24px rgba(37,99,235,0.3);
     }
     .nav-cta:hover { background: var(--blue-dark); }
 
     main {
       max-width: 960px;
       margin: 0 auto;
-      padding: 24px 16px 64px;
+      padding: 32px 16px 64px;
     }
-    .hero {
-      padding: 40px 0 32px;
-    }
-    .badge {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -85,32 +72,46 @@
       margin-bottom: 12px;
     }
     .hero-title {
-      font-size: clamp(26px, 4vw, 32px);
-      font-weight: 700;
+      font-size: clamp(26px, 4.2vw, 36px);
+      font-weight: 800;
       margin: 0 0 12px;
     }
+    .hero-title span { color: var(--blue); }
     .hero-sub {
       color: #475569;
       max-width: 520px;
       font-size: 14px;
     }
-    .hero-metrics {
+    .hero-actions {
+      margin-top: 20px;
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 20px;
-      font-size: 13px;
+      gap: 12px;
     }
-    .hero-metrics div {
-      padding: 10px 14px;
-      border-radius: 12px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(37,99,235,0.35);
+    }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-outline {
       background: #fff;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.06);
-      min-width: 140px;
+      border: 1px solid #e2e8f0;
+      color: #475569;
     }
-    .metric-label { color: #64748b; font-size: 12px; }
-    .metric-value { font-weight: 700; font-size: 18px; }
-
     section {
       margin-top: 40px;
     }
@@ -125,7 +126,7 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 16px;
     }
     .card {
@@ -136,24 +137,18 @@
       font-size: 14px;
     }
     .card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
+      margin: 0 0 8px;
       font-size: 16px;
     }
-    .card ul {
-      padding-left: 18px;
-      margin: 0;
-    }
-    .card li {
-      margin-bottom: 4px;
-    }
+    .card p { margin: 0; color: #475569; }
+
     .contact {
       margin-top: 40px;
-      padding: 20px 16px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #2563eb, #0f766e);
-      color: #e2f3ff;
-      box-shadow: 0 18px 40px rgba(15,23,42,0.45);
+      padding: 20px 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #1d4ed8, #0f766e);
+      color: #e0f2fe;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.6);
     }
     .contact h2 { margin: 0 0 8px; color: #e5f0ff; }
     .contact p { margin: 0 0 14px; font-size: 14px; }
@@ -161,30 +156,19 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 6px;
+      margin-top: 8px;
     }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: none;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .btn-primary {
+    .contact .btn-primary {
       background: #fff;
       color: var(--blue-dark);
+      box-shadow: 0 10px 28px rgba(15,23,42,0.4);
     }
-    .btn-outline {
-      background: transparent;
-      border: 1px solid rgba(226,232,240,0.8);
+    .contact .btn-outline {
+      border-color: rgba(226,232,240,0.9);
       color: #e5f0ff;
+      background: transparent;
     }
+
     footer {
       text-align: center;
       font-size: 12px;
@@ -200,134 +184,109 @@
 <body>
   <header>
     <div class="nav-inner">
-      <div class="logo">Kanarie AI</div>
+      <div class="logo">KANARIE AI</div>
       <nav class="nav-links">
         <a href="#problems">課題</a>
         <a href="#solution">解決策</a>
-        <a href="#comparison">比較</a>
+        <a href="#comparison">他社比較</a>
       </nav>
-      <a href="#contact" class="nav-cta">まずは相談する</a>
+      <a href="#contact" class="nav-cta">お問い合わせ</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="badge">YouTubeショート × Kaggle GM AI</div>
+    <!-- Hero -->
+    <section>
+      <div class="hero-badge">
+        <span style="width:8px;height:8px;border-radius:999px;background:#2563eb;display:inline-block;"></span>
+        次世代の広告戦略
+      </div>
       <h1 class="hero-title">
-        営業コストをかけずに、<br />
-        AIがあなたの事業の売上を“自動で増やし続ける”
+        「ただの広告」から <span>「資産」</span> へ。
       </h1>
       <p class="hero-sub">
-        Kanarie AI は、Kaggle Grandmaster クラスのアルゴリズムと YouTubeショート広告を組み合わせて、
-        あなたのサービスの認知・リード獲得・売上を自動で最大化する広告エンジンです。
+        Meta・TikTok・Google検索広告の限界を超える。Kanarie AIは、YouTubeショートを活用した
+        <strong>ストック型マーケティング</strong> を実現します。
       </p>
-
-      <div class="hero-metrics">
-        <div>
-          <div class="metric-label">想定ROI</div>
-          <div class="metric-value">400%〜</div>
-          <div class="metric-label">（広告費に対しての売上）</div>
-        </div>
-        <div>
-          <div class="metric-label">運用工数</div>
-          <div class="metric-value">▲90%</div>
-          <div class="metric-label">従来の人力運用比</div>
-        </div>
-        <div>
-          <div class="metric-label">対応媒体</div>
-          <div class="metric-value">YouTube Shorts</div>
-          <div class="metric-label">＋ 将来 TikTok 等へ展開</div>
-        </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">デモを依頼する</a>
+        <a href="#solution" class="btn btn-outline">詳細を見る</a>
       </div>
     </section>
 
+    <!-- Problems -->
     <section id="problems">
-      <h2>よくある課題</h2>
-      <p class="section-sub">こんな悩みが1つでもあれば、Kanarie AI がフィットします。</p>
+      <h2>従来の広告モデルの「限界」</h2>
+      <p class="section-sub">フロー型広告に依存するリスクを感じていませんか？</p>
       <div class="grid">
         <div class="card">
-          <h3>広告費はかけているのに、数字が合わない</h3>
-          <ul>
-            <li>Google / Meta 広告の CPC が高騰している</li>
-            <li>代理店に丸投げしているが、レポートばかりで改善が見えない</li>
-            <li>CPA は合っているが、売上・LTV につながっていない</li>
-          </ul>
+          <h3>広告停止 ＝ 収益ゼロ</h3>
+          <p>Metaや検索広告は、予算を止めた瞬間に流入が完全にストップします。資産として残りません。</p>
         </div>
         <div class="card">
-          <h3>社内にデジタル人材がいない</h3>
-          <ul>
-            <li>専任マーケターを採用するコスト・教育コストが重い</li>
-            <li>最新のアルゴリズムやクリエイティブのトレンドを追いきれない</li>
-            <li>担当者が退職するとナレッジが消えてしまう</li>
-          </ul>
+          <h3>CPAの高騰</h3>
+          <p>競合の増加により獲得単価は年々上昇。同じ予算での獲得効率は下がる一方です。</p>
         </div>
         <div class="card">
-          <h3>もっと効率よく、売上だけを増やしたい</h3>
-          <ul>
-            <li>広告は伸ばしたいが、営業組織を増やしたくない</li>
-            <li>リードの質を担保しながら、母数だけ増やしたい</li>
-            <li>経営者は本業に集中し、集客は自動化したい</li>
-          </ul>
+          <h3>資産にならない広告</h3>
+          <p>いくら広告費をかけても、自社チャンネルや登録者という形で残りづらい構造です。</p>
         </div>
       </div>
     </section>
 
+    <!-- Solution -->
     <section id="solution">
-      <h2>Kanarie AI がやること</h2>
-      <p class="section-sub">Kaggle GM レベルのAIで、「誰に・どんなクリエイティブを・どれくらい出すか」を自動で最適化します。</p>
+      <h2>Kanarie AIのソリューション</h2>
+      <p class="section-sub">YouTubeショート × AI最適化 で「ストック型」集客をつくる。</p>
       <div class="grid">
         <div class="card">
-          <h3>① 事業・商品をヒアリング</h3>
-          <p>あなたの事業内容・理想顧客・過去の実績などを伺い、「勝てる構図」を一緒に整理します。経営者視点の言語化を、AIが扱える構造に変換します。</p>
+          <h3>① 事業理解 & 設計</h3>
+          <p>あなたの事業モデル・理想顧客・既存の導線をヒアリングし、「勝てる構図」を整理します。</p>
         </div>
         <div class="card">
-          <h3>② YouTubeショート用クリエイティブ生成</h3>
-          <p>AIで大量のパターンを生成しながら、実際のパフォーマンスデータから“勝ちパターン”だけを残していきます。人力では不可能なテスト量を、短期間で回します。</p>
+          <h3>② ショート動画クリエイティブ</h3>
+          <p>AIを用いて大量のパターンを生成・検証し、視聴維持率とCVRの高い構成だけを残していきます。</p>
         </div>
         <div class="card">
-          <h3>③ 日次〜週次で自動最適化</h3>
-          <p>クリック率・視聴維持率・CVR などの指標をもとに、出稿量・クリエイティブ・ターゲティングを自動でチューニングします。経営者はレポートを見るだけでOKです。</p>
+          <h3>③ 自動最適化</h3>
+          <p>成果の低い動画は停止し、良い動画へ予算を自動で集中。運用工数をほぼゼロにします。</p>
         </div>
       </div>
     </section>
 
+    <!-- Comparison -->
     <section id="comparison">
-      <h2>他の選択肢との違い</h2>
-      <p class="section-sub">「人を増やす」のではなく、「AIを増やしてROIを最大化する」発想です。</p>
+      <h2>他媒体との比較</h2>
+      <p class="section-sub">なぜ今、Kanarie AI が選ばれるのか。</p>
       <div class="grid">
         <div class="card">
-          <h3>自社採用との比較</h3>
-          <ul>
-            <li>マーケター1人の採用＋教育コストよりも、導入初期から成果が見えやすい</li>
-            <li>退職・異動リスクなしで、常に同じレベルのナレッジが使える</li>
-          </ul>
+          <h3>YouTubeショート (Kanarie)</h3>
+          <p>動画がチャンネルに残り続け、広告停止後もオーガニック再生と登録者が増え続ける「資産型」。</p>
         </div>
         <div class="card">
-          <h3>従来の広告代理店との比較</h3>
-          <ul>
-            <li>「レポートを作る人件費」ではなく、「AIで回す広告運用」にコストを使う</li>
-            <li>Kaggle GM レベルのアルゴリズムで、仮説検証の回転数が段違い</li>
-          </ul>
+          <h3>Meta / TikTok広告</h3>
+          <p>配信を止めた瞬間に流入ゼロ。短期的なブーストは可能だが、資産性は低い。</p>
         </div>
         <div class="card">
-          <h3>何もしない場合</h3>
-          <ul>
-            <li>広告単価は年々上昇し続ける一方で、競合はAI活用を進めていきます</li>
-            <li>「知っているのに動いていない」こと自体が、機会損失になっていきます</li>
-          </ul>
+          <h3>検索広告</h3>
+          <p>顕在層には強いがクリック単価が高く、スケールに限界。競争も激化しやすい領域。</p>
         </div>
       </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="contact">
-      <h2>まずは、あなたの事業で ROI どれくらい出せそうか診断します</h2>
+      <h2>まずは、あなたの事業でのポテンシャルを診断します</h2>
       <p>
-        いきなり大きな契約ではなく、<br />
-        「あなたのビジネスモデル × Kanarie AI」で、どのくらいのスケールとROIが見込めるかを一緒にシミュレーションします。
+        いきなり大きな広告費のご提案ではなく、<br />
+        「Kanarie AI を使うと、どのくらいのスケールとROIが見込めるか」を一緒にシミュレーションします。
       </p>
       <div class="contact-actions">
-        <a href="https://line.me/" target="_blank" class="btn btn-primary">LINEで相談する</a>
-        <a href="mailto:info@example.com" class="btn btn-outline">メールで問い合わせ</a>
+        <a href="mailto:masahiro@capital-design-holdings.com?subject=Kanarie AIについて"
+           class="btn btn-primary">メールで相談する</a>
+        <a href="https://www.capital-design-holdings.com" target="_blank" class="btn btn-outline">
+          公式サイトを見る
+        </a>
       </div>
     </section>
   </main>
